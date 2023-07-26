@@ -1,0 +1,17 @@
+.footer-icones{
+    width: 400px;
+    font-size: 30px;
+}
+.footer-links{
+    width: 700px;
+}
+@media (max-width:426px) {
+    .footer-icones{
+        width: 300px;
+        font-size: 25px;
+    }
+    .footer-links{
+        width: 300px;
+    }
+    
+}
