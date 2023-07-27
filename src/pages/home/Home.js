@@ -65,7 +65,7 @@ export const Home = () => {
       <section className=" d-flex justify-content-center align-items-center flex-column mt-30 pt-30 mb-30 pb-30">
         <div className="card-coming d-flex justify-content-center align-items-center gap-15 flex-column flex-md-row">
           <div className="coming_card card1 d-flex justify-content-center align-items-end pb-30">
-            <button className=" pe-20 ps-20 p-10 bg-light border-0"><Link className="text-decoration-none font-Montserrat text-dark  "> COMING SOON </Link> </button>
+            <button className=" pe-20 ps-20 p-10 bg-light border-0"><Link className="text-decoration-none font-Montserrat text-dark  "> COMING SON </Link> </button>
           </div>
           <div className="coming_card card2 d-flex justify-content-center align-items-end pb-30">
             <button className=" pe-20 ps-20 p-10 bg-light border-0"><Link className="text-decoration-none font-Montserrat text-dark  "> COMING SOON </Link> </button>
