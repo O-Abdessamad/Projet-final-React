@@ -38,7 +38,7 @@ export const Contact = () => {
                             type="text"
                             className="form-control"
                             id="exampleFormControlInput1"
-                            placeholder="Email Address"
+                            placeholder="Email Addres"
                         />
                     </div>
                     <div className="mb-20">
