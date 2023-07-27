@@ -17,7 +17,7 @@ export const Produit = () => {
             <div className="cov-produit">
                 <div className="titres text-coleur-byad bg-black d-flex justify-content-center align-items-center flex-column ">
                     <h1>PRODUCT</h1>
-                    <p> New Arrivais Women Collection</p>
+                    <p> New Arrivais Women Collectio</p>
                 </div>
             </div>
 
