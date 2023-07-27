@@ -22,7 +22,7 @@ export const Contact = () => {
                             type="text"
                             className="form-control"
                             id="exampleFormControlInput1"
-                            placeholder="Full Name"
+                            placeholder="Full Nam"
                         />
                     </div>
                     <div className="mb-20">
