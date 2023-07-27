@@ -1,55 +1,126 @@
-import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { BiSearch } from "react-icons/bi";
+import React from 'react';
 import "./produit.scss"
-import { Header } from "../../layouts/Header";
-import { Footer } from "../../layouts/Footer";
-import img1 from "../../layouts/image/img1.png";
+import "../home/home.scss"
+
+
+import img_produit1 from "../../layouts/image/img_produit/img_produit1.jpeg"
+import img_produit2 from "../../layouts/image/img_produit/img_produit2.jpeg"
+import img_produit3 from "../../layouts/image/img_produit/img_produit3.jpeg"
+import img_produit4 from "../../layouts/image/img_produit/img_produit4.jpeg"
 
 export const Produit = () => {
-    const [valueinput1,setvalueinput]=useState(0);
-    const [count, setcount] = useState(0);
-
-
-    const input = (event) =>{
-        console.log(event.target.value);
-        setvalueinput(event.target.value);
-    }
-
-    const plus = () => {
-        setcount(count + 1);
-        console.log(count);
-      }
-      const minus = () => {
-        if (count>0) {
-            setcount(count - 1);
-        console.log(count);
-        } else{
-            setcount(count );
-        }
-        
-      }
     return (
-        <>
-            <Header />
-            <div className="contenu-produit d-flex  justify-content-around   mt-4 ">
-                <div className="produit bg-secondary p-10 d-flex flex-column align-items-center gap-10">
-                    <img className="produit-img" src={img1} alt="" />
-                    <div className="quantiter d-flex gap-20">
-                        <button className="btn btn-info" onClick={plus}>+</button>
-                        <input className=" text-center" type="text" value={count} onChange={(event) => {
-                            input(event)
-                        }} />
-                        <button className="btn btn-info" onClick={minus}>-</button>
-                    </div>
-                    <button className="btn btn-success">add to cart</button>
+        <div >
 
+            <div className="cov-produit">
+                <div className="titres text-coleur-byad bg-black d-flex justify-content-center align-items-center flex-column ">
+                    <h1>PRODUCT</h1>
+                    <p> New Arrivais Women Collection</p>
                 </div>
-                <div className="description bg-secondary p-10 d-flex flex-column align-items-center text-center">
-                    <h1>Produit</h1>
-                    <p className=" w-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque error tempore sit temporibus et, reiciendis alias obcaecati omnis placeat expedita illo corporis perferendis eum ullam animi. Nostrum vitae labore earum cupiditate distinctio obcaecati nobis magnam natus sed commodi recusandae adipisci sint, nihil accusamus temporibus quasi ut doloremque quas! Repudiandae, dolorem!</p>
-                </div>
-
             </div>
-            <Footer />
-        </>
+
+            <div className="main-produit d-flex justify-content-center align-items-center align-items-md-start mt-30 pt-30 pb-30 mb-30 p-30 flex-column flex-md-row ">
+
+                <div className=' ms-lg-30  ps-lg-30 categories d-flex justify-content-center align-items-center align-items-md-start gap-5 flex-column  w-25'>
+                    <h3 className=" fw-bolder fs-2">Categories</h3>
+                    <NavLink to={"/"} className={"text-decoration-none font-Montserrat text-coleur-gry-nav "}>All</NavLink>
+                    <NavLink to={"/"} className={"text-decoration-none font-Montserrat text-coleur-gry-nav"}>Women</NavLink>
+                    <NavLink to={"/"} className={"text-decoration-none font-Montserrat text-coleur-gry-nav"}>Kids</NavLink>
+                    <NavLink to={"/"} className={"text-decoration-none font-Montserrat text-coleur-gry-nav"}>Men</NavLink> <br />
+                    <h3 className=" fw-bolder fs-2">Filter</h3>
+                    <div className="div-search  border border-1 p-20 d-flex align-items-center gap-10 ">
+                        <input className=" border border-0" type="text" placeholder="Search Products..." />
+                        <BiSearch className="BiSearch" />
+                    </div>
+
+                </div>
+
+                <div className=' me-lg-30  pe-lg-30 produits '>
+                    <p className="font-Montserrat text-coleur-gry-nav text-end me-lg-30  pe-lg-30">Nombre de produit search : 15 all</p>
+                    <div className=" me-lg-40  pe-lg-40 our_products_img mt-30  d-flex justify-content-center align-items-center gap-5 flex-column flex-md-row flex-wrap">
+
+                        <div className="produit_card  d-flex justify-content-center align-items-center flex-column   position-relative">
+                            <img src={img_produit3} width="100%" alt="" />
+                            <span className=" bg-coleur-span-new text-light position-absolute ">New</span>
+                            <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
+                                <p className=" m-0">Herschel supply co 25l</p>
+                                <p className=" m-0">$75.00</p>
+                            </div>
+                        </div>
+                        <div className="produit_card  d-flex justify-content-center align-items-center flex-column   position-relative">
+                            <img src={img_produit2} width="100%" alt="" />
+                            <span className=" bg-coleur-span-new text-light position-absolute ">New</span>
+                            <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
+                                <p className=" m-0">Herschel supply co 25l</p>
+                                <p className=" m-0">$75.00</p>
+                            </div>
+                        </div>
+                        <div className="produit_card  d-flex justify-content-center align-items-center flex-column   position-relative">
+                            <img src={img_produit1} width="100%" alt="" />
+                            <span className=" bg-coleur-span-new text-light position-absolute ">New</span>
+                            <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
+                                <p className=" m-0">Herschel supply co 25l</p>
+                                <p className=" m-0">$75.00</p>
+                            </div>
+                        </div>
+                        <div className="produit_card  d-flex justify-content-center align-items-center flex-column   position-relative">
+                            <img src={img_produit4} width="100%" alt="" />
+                            <span className=" bg-coleur-span-new text-light position-absolute ">New</span>
+                            <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
+                                <p className=" m-0">Herschel supply co 25l</p>
+                                <p className=" m-0">$75.00</p>
+                            </div>
+                        </div>
+                        <div className="produit_card  d-flex justify-content-center align-items-center flex-column   position-relative">
+                            <img src={img_produit1} width="100%" alt="" />
+                            <span className=" bg-coleur-span-new text-light position-absolute ">New</span>
+                            <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
+                                <p className=" m-0">Herschel supply co 25l</p>
+                                <p className=" m-0">$75.00</p>
+                            </div>
+                        </div>
+                        <div className="produit_card  d-flex justify-content-center align-items-center flex-column   position-relative">
+                            <img src={img_produit4} width="100%" alt="" />
+                            <span className=" bg-coleur-span-new text-light position-absolute ">New</span>
+                            <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
+                                <p className=" m-0">Herschel supply co 25l</p>
+                                <p className=" m-0">$75.00</p>
+                            </div>
+                        </div>
+                        <div className="produit_card  d-flex justify-content-center align-items-center flex-column   position-relative">
+                            <img src={img_produit1} width="100%" alt="" />
+                            <span className=" bg-coleur-span-new text-light position-absolute ">New</span>
+                            <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
+                                <p className=" m-0">Herschel supply co 25l</p>
+                                <p className=" m-0">$75.00</p>
+                            </div>
+                        </div>
+
+                        <div className="produit_card  d-flex justify-content-center align-items-center flex-column   position-relative">
+                            <img src={img_produit2} width="100%" alt="" />
+                            <span className=" bg-coleur-span-new text-light position-absolute ">New</span>
+                            <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
+                                <p className=" m-0">Herschel supply co 25l</p>
+                                <p className=" m-0">$75.00</p>
+                            </div>
+                        </div>
+
+                        <div className="produit_card  d-flex justify-content-center align-items-center flex-column   position-relative">
+                            <img src={img_produit3} width="100%" alt="" />
+                            <span className=" bg-coleur-span-new text-light position-absolute ">New</span>
+                            <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
+                                <p className=" m-0">Herschel supply co 25l</p>
+                                <p className=" m-0">$75.00</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
     );
-};
+}

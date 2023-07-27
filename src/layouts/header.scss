@@ -5,13 +5,22 @@
 .header_menu {
     width: 500px;
 }
+.menu-nav.active{
+    color: #e65540 !important;
+}
 .header_icone {
     width: 200px;
     .icone-nav {
-        font-size: 30px;
+        font-size: 40px;
         
     }
 }
 .icone-heart{
     border-right: 1px solid #8e8e8e;
+}
+.panier{
+    font-size: 12px;
+    border-radius: 50%;
+    position: absolute;
+    right: 5px;
 }

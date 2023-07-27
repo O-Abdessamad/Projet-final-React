@@ -1,4 +1,62 @@
-.contenu-produit{
-    height: 90%;
-    padding: 89px;
+.div-search{
+    input{
+        outline: none;
+    }
+    .BiSearch{
+        cursor: pointer;
+    }
 }
+.cov-produit{
+    .titres{
+        height: 300px;
+        background-position: center;
+        background-size: cover;
+        background-image: url("../../layouts/image/cov-produit.jpg");       
+        h3{
+            font-size: 30px;
+        }
+        h1{
+            font-size: 60px;
+        }
+    }   
+}
+// ----- about ---------
+.about{
+    .image-about{
+        img{
+            height: 500px;
+            width: 350px;
+        }       
+    }
+    .texte-about{
+        width: 40%;
+    }
+}
+
+@media (max-width:769px) {
+    .about{
+        .image-about{
+            img{
+                height: 550px;
+                width: 520px;
+            }       
+        }
+        .texte-about{
+            width: 80%;
+        }
+    }
+}
+@media (max-width:426px) {
+    .about{
+        .image-about{
+            img{
+                height: 450px;
+                width: 400px;
+            }       
+        }
+        .texte-about{
+            width: 90%;
+        }
+    }
+}
+// ----- end about ---------

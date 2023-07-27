@@ -1,24 +1,26 @@
 import { NavLink, Link } from "react-router-dom";
 import img_log from "../layouts/image/logo.png";
 import "./header.scss"
-import { AiOutlineHeart } from "react-icons/ai";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineHeart,AiOutlineShoppingCart } from "react-icons/ai";
 
 
 export const Header = () => {
     return (
         <>
-            <header className="d-flex justify-content-between bg-info p-10 align-items-center text-light">
-                <div> <Link><img src={img_log} alt="log" /> </Link> </div>
+            <header className="d-flex justify-content-between  p-10 align-items-center text-light ">
+                <div className=" ps-30 "> <Link to={"/"} ><img src={img_log} alt="log" /> </Link> </div>
                 <div className="header_menu  d-none d-lg-flex justify-content-around ">
                     <NavLink to={"/"} className="text-decoration-none font-Montserrat text-coleur-gry-nav menu-nav ">Home</NavLink>
-                    <NavLink to={"/product"} className="text-decoration-none font-Montserrat text-coleur-gry-nav  menu-nav ">Product</NavLink>
+                    <NavLink to={"/produit"} className="text-decoration-none font-Montserrat text-coleur-gry-nav  menu-nav ">Produit</NavLink>
                     <NavLink to={"/about"} className="text-decoration-none font-Montserrat text-coleur-gry-nav  menu-nav ">About</NavLink>
                     <NavLink to={"/contact"} className="text-decoration-none font-Montserrat text-coleur-gry-nav  menu-nav ">Contact</NavLink>
                 </div>
-                <div className="header_icone bg-light d-flex  justify-content-center align-items-center">
-                    <NavLink to={"/"} className="text-decoration-none icone-nav text-coleur-gry-nav icone-heart pe-30">  <AiOutlineHeart  /> </NavLink>
-                    <NavLink to={"/"} className="text-decoration-none icone-nav text-coleur-gry-nav ps-30 ">  <AiOutlineShoppingCart  /> </NavLink>
+                <div className="header_icone  d-flex  justify-content-center align-items-center">
+                    <NavLink to={"/"} className="text-decoration-none icone-nav text-coleur-gry-nav icone-heart pe-30 ">  <AiOutlineHeart /> </NavLink>
+                    <div className="  position-relative">
+                        <span className=" bg-black p-6 panier"> 1 </span>
+                        <NavLink to={"/"} className="text-decoration-none icone-nav text-coleur-gry-nav ps-30 pe-15 ">  <AiOutlineShoppingCart /> </NavLink>
+                    </div>
                     {/* menu-bergre */}
                     <div className="menu-bergre d-lg-none">
                         <nav className="navbar ">
@@ -49,71 +51,13 @@ export const Header = () => {
                                 <div className="offcanvas-body">
                                     <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                                         <li className="nav-item">
-                                            <a
-                                                className="nav-link text-coleur-link-navv   active"
-                                                href="#cover"
-                                            >
-                                                Home
-                                            </a>
-                                        </li>
+                                            <NavLink to={"/"} className="text-decoration-none font-Montserrat text-coleur-gry-nav menu-nav mb-10">Home</NavLink></li>
                                         <li>
-                                            <a className="nav-link text-coleur-link-navv  " href="#about">
-                                                About
-                                            </a>
-                                        </li>
+                                            <NavLink to={"/product"} className="text-decoration-none font-Montserrat text-coleur-gry-nav  menu-nav ">Product</NavLink></li>
                                         <li>
-                                            <a className="nav-link text-coleur-link-navv " href="#menu">
-                                                Menu
-                                            </a>
-                                        </li>
+                                            <NavLink to={"/about"} className="text-decoration-none font-Montserrat text-coleur-gry-nav  menu-nav ">About</NavLink></li>
                                         <li>
-                                            <a className="nav-link text-coleur-link-navv  " href="#events">
-                                                Events
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className="nav-link text-coleur-link-navv  " href="#chef">
-                                                Chefs
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a className="nav-link text-coleur-link-navv  " href="#gallery">
-                                                Gallery
-                                            </a>
-                                        </li>
-                                        <li className="dropdown">
-                                            <a
-                                                className="nav-link dropdown-toggle text-coleur-link-navv"
-                                                href="#"
-                                                role="button"
-                                                data-bs-toggle="dropdown"
-                                                aria-expanded="false"
-                                            >
-                                                Drop Down
-                                            </a>
-                                            <ul className="dropdown-menu">
-                                                <li>
-                                                    <a className="dropdown-item" href="#">
-                                                        Action
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a className="dropdown-item" href="#">
-                                                        Another action
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a className="dropdown-item" href="#">
-                                                        Something else here
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a className="nav-link text-coleur-link-navv " href="#contact">
-                                                Contact
-                                            </a>
-                                        </li>
+                                            <NavLink to={"/contact"} className="text-decoration-none font-Montserrat text-coleur-gry-nav  menu-nav ">Contact</NavLink></li>
                                     </ul>
                                 </div>
                             </div>
