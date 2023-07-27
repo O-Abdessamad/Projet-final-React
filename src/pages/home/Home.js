@@ -127,7 +127,7 @@ export const Home = () => {
       </section>
       <div className="cov2">
         <div className="titres text-coleur-byad bg-black d-flex justify-content-center align-items-center flex-column">
-          <h3>The Beaut</h3>
+          <h3>The Beauty</h3>
           <h1>LOOKBOOK</h1>
           <p> <FaPlay></FaPlay> PLAY VIDEO</p>
         </div>
