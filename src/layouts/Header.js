@@ -16,10 +16,10 @@ export const Header = () => {
                     <NavLink to={"/contact"} className="text-decoration-none font-Montserrat text-coleur-gry-nav  menu-nav ">Contact</NavLink>
                 </div>
                 <div className="header_icone  d-flex  justify-content-center align-items-center">
-                    <NavLink to={"/"} className="text-decoration-none icone-nav text-coleur-gry-nav icone-heart pe-30 ">  <AiOutlineHeart /> </NavLink>
+                    <NavLink to={"/coeur"} className="text-decoration-none icone-nav text-coleur-gry-nav icone-heart pe-30 menu-nav">  <AiOutlineHeart /> </NavLink>
                     <div className="  position-relative">
                         <span className=" bg-black p-6 panier"> 1 </span>
-                        <NavLink to={"/"} className="text-decoration-none icone-nav text-coleur-gry-nav ps-30 pe-15 ">  <AiOutlineShoppingCart /> </NavLink>
+                        <NavLink to={"/panier"} className="text-decoration-none icone-nav text-coleur-gry-nav ps-30 pe-15 menu-nav">  <AiOutlineShoppingCart /> </NavLink>
                     </div>
                     {/* menu-bergre */}
                     <div className="menu-bergre d-lg-none">

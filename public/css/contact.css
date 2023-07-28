@@ -1,0 +1,13 @@
+.conatact-map {
+  width: 500px;
+  height: 500px;
+}
+.conatact-map div input {
+  outline: none;
+}
+
+@media (max-width: 426px) {
+  .conatact-map {
+    width: 380px;
+  }
+}

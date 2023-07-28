@@ -56,19 +56,67 @@
         width: 250px;        
         background-position: center;
         background-size: cover;
+        transition: all 0.3s;
+
         img{
             height: 258px;
         }
-        .bg-coleur-span-new{
+        .bg-coleur-span-new , .bg-coleur-span-sale{
             top: 5px;
             left: 5px;
             border-radius: 50%;
             padding: 5px 10px;
             font-size: 11px;
         }
+        .add-to-card {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50% , -70% );
+            transition: all 0.3s;
+
+
+        }
+        .icone-coeur{
+            position: absolute;
+            font-size: 30px;
+            top: 2%;
+            left: 80%;
+            color: white;
+            cursor: pointer;
+        }
     }
     
 }
+.add-to-card {
+    animation: myfirst 0.5s 1;
+    animation-direction: alternate;
+}
+.show-anemation{
+    display: flex !important;
+}
+.no-show-anemation{
+    display: none !important;
+}
+@keyframes myfirst {
+    0% {
+        top: 100%;
+    }
+
+    100% {
+        top: 70%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
 .cov2{
     .titres{
         height: 300px;

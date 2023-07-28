@@ -1,0 +1,22 @@
+.image-table{
+    height: 100px;
+    width: 80px;
+}
+table {
+    tr{
+        td{
+            .quantiter{
+                input,button{
+                    width: 30px;
+                    height: 30px;
+                    border: none;
+                    outline: none;
+                }
+                button{
+                    background-color: transparent;
+                }
+                
+            }
+        }
+    }
+}

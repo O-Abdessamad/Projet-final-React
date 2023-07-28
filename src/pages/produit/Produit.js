@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
+import { AiFillHeart } from "react-icons/ai";
 import React from 'react';
 import "./produit.scss"
 import "../home/home.scss"
@@ -10,7 +11,7 @@ import img_produit2 from "../../layouts/image/img_produit/img_produit2.jpeg"
 import img_produit3 from "../../layouts/image/img_produit/img_produit3.jpeg"
 import img_produit4 from "../../layouts/image/img_produit/img_produit4.jpeg"
 
-export const Produit = () => {
+export const Produit = (props) => {
     return (
         <div >
 
@@ -41,81 +42,183 @@ export const Produit = () => {
                     <p className="font-Montserrat text-coleur-gry-nav text-end me-lg-30  pe-lg-30">Nombre de produit search : 15 all</p>
                     <div className=" me-lg-40  pe-lg-40 our_products_img mt-30  d-flex justify-content-center align-items-center gap-5 flex-column flex-md-row flex-wrap">
 
-                        <div className="produit_card  d-flex justify-content-center align-items-center flex-column   position-relative">
+                        <div className="produit_card d-flex justify-content-center align-items-center flex-column   position-relative" onMouseOut={(event2) => {
+                            props.mousout(event2)
+                        }} onMouseOver={(event) => {
+                            props.moushover(event)
+                        }}>
                             <img src={img_produit3} width="100%" alt="" />
-                            <span className=" bg-coleur-span-new text-light position-absolute ">New</span>
+                            <span className=" bg-coleur-span-sale text-light position-absolute ">Sale</span>
                             <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
                                 <p className=" m-0">Herschel supply co 25l</p>
                                 <p className=" m-0">$75.00</p>
                             </div>
-                        </div>
-                        <div className="produit_card  d-flex justify-content-center align-items-center flex-column   position-relative">
-                            <img src={img_produit2} width="100%" alt="" />
-                            <span className=" bg-coleur-span-new text-light position-absolute ">New</span>
-                            <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
-                                <p className=" m-0">Herschel supply co 25l</p>
-                                <p className=" m-0">$75.00</p>
+
+                            <div className=" add-to-card  text-light  w-75 justify-content-center no-show-anemation">
+                                <button className=" border-0 bg-black text-coleur-byad ps-30 pe-30 p-10 rounded-5">Add to card</button>
                             </div>
+                            <div className="icone-coeur no-show-anemation ">
+                                <AiFillHeart />
+                            </div>
+
                         </div>
-                        <div className="produit_card  d-flex justify-content-center align-items-center flex-column   position-relative">
+                        <div className="produit_card d-flex justify-content-center align-items-center flex-column   position-relative" onMouseOut={(event2) => {
+                            props.mousout(event2)
+                        }} onMouseOver={(event) => {
+                            props.moushover(event)
+                        }}>
                             <img src={img_produit1} width="100%" alt="" />
                             <span className=" bg-coleur-span-new text-light position-absolute ">New</span>
                             <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
                                 <p className=" m-0">Herschel supply co 25l</p>
                                 <p className=" m-0">$75.00</p>
                             </div>
+
+                            <div className=" add-to-card  text-light  w-75 justify-content-center no-show-anemation">
+                                <button className=" border-0 bg-black text-coleur-byad ps-30 pe-30 p-10 rounded-5">Add to card</button>
+                            </div>
+                            <div className="icone-coeur no-show-anemation ">
+                                <AiFillHeart />
+                            </div>
+
                         </div>
-                        <div className="produit_card  d-flex justify-content-center align-items-center flex-column   position-relative">
+                        <div className="produit_card d-flex justify-content-center align-items-center flex-column   position-relative" onMouseOut={(event2) => {
+                            props.mousout(event2)
+                        }} onMouseOver={(event) => {
+                            props.moushover(event)
+                        }}>
+                            <img src={img_produit2} width="100%" alt="" />
+                            <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
+                                <p className=" m-0">Herschel supply co 25l</p>
+                                <p className=" m-0">$75.00</p>
+                            </div>
+
+                            <div className=" add-to-card  text-light  w-75 justify-content-center no-show-anemation">
+                                <button className=" border-0 bg-black text-coleur-byad ps-30 pe-30 p-10 rounded-5">Add to card</button>
+                            </div>
+                            <div className="icone-coeur no-show-anemation ">
+                                <AiFillHeart />
+                            </div>
+
+                        </div>
+                        <div className="produit_card d-flex justify-content-center align-items-center flex-column   position-relative" onMouseOut={(event2) => {
+                            props.mousout(event2)
+                        }} onMouseOver={(event) => {
+                            props.moushover(event)
+                        }}>
+                            <img src={img_produit1} width="100%" alt="" />
+                            <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
+                                <p className=" m-0">Herschel supply co 25l</p>
+                                <p className=" m-0">$75.00</p>
+                            </div>
+
+                            <div className=" add-to-card  text-light  w-75 justify-content-center no-show-anemation">
+                                <button className=" border-0 bg-black text-coleur-byad ps-30 pe-30 p-10 rounded-5">Add to card</button>
+                            </div>
+                            <div className="icone-coeur no-show-anemation ">
+                                <AiFillHeart />
+                            </div>
+
+                        </div>
+                        <div className="produit_card d-flex justify-content-center align-items-center flex-column   position-relative" onMouseOut={(event2) => {
+                            props.mousout(event2)
+                        }} onMouseOver={(event) => {
+                            props.moushover(event)
+                        }}>
                             <img src={img_produit4} width="100%" alt="" />
                             <span className=" bg-coleur-span-new text-light position-absolute ">New</span>
                             <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
                                 <p className=" m-0">Herschel supply co 25l</p>
                                 <p className=" m-0">$75.00</p>
                             </div>
-                        </div>
-                        <div className="produit_card  d-flex justify-content-center align-items-center flex-column   position-relative">
-                            <img src={img_produit1} width="100%" alt="" />
-                            <span className=" bg-coleur-span-new text-light position-absolute ">New</span>
-                            <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
-                                <p className=" m-0">Herschel supply co 25l</p>
-                                <p className=" m-0">$75.00</p>
-                            </div>
-                        </div>
-                        <div className="produit_card  d-flex justify-content-center align-items-center flex-column   position-relative">
-                            <img src={img_produit4} width="100%" alt="" />
-                            <span className=" bg-coleur-span-new text-light position-absolute ">New</span>
-                            <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
-                                <p className=" m-0">Herschel supply co 25l</p>
-                                <p className=" m-0">$75.00</p>
-                            </div>
-                        </div>
-                        <div className="produit_card  d-flex justify-content-center align-items-center flex-column   position-relative">
-                            <img src={img_produit1} width="100%" alt="" />
-                            <span className=" bg-coleur-span-new text-light position-absolute ">New</span>
-                            <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
-                                <p className=" m-0">Herschel supply co 25l</p>
-                                <p className=" m-0">$75.00</p>
-                            </div>
-                        </div>
 
-                        <div className="produit_card  d-flex justify-content-center align-items-center flex-column   position-relative">
-                            <img src={img_produit2} width="100%" alt="" />
-                            <span className=" bg-coleur-span-new text-light position-absolute ">New</span>
+                            <div className=" add-to-card  text-light  w-75 justify-content-center no-show-anemation">
+                                <button className=" border-0 bg-black text-coleur-byad ps-30 pe-30 p-10 rounded-5">Add to card</button>
+                            </div>
+                            <div className="icone-coeur no-show-anemation ">
+                                <AiFillHeart />
+                            </div>
+
+                        </div>
+                        <div className="produit_card d-flex justify-content-center align-items-center flex-column   position-relative" onMouseOut={(event2) => {
+                            props.mousout(event2)
+                        }} onMouseOver={(event) => {
+                            props.moushover(event)
+                        }}>
+                            <img src={img_produit1} width="100%" alt="" />
+                            <span className=" bg-coleur-span-sale text-light position-absolute ">Sale</span>
                             <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
                                 <p className=" m-0">Herschel supply co 25l</p>
                                 <p className=" m-0">$75.00</p>
                             </div>
-                        </div>
 
-                        <div className="produit_card  d-flex justify-content-center align-items-center flex-column   position-relative">
+                            <div className=" add-to-card  text-light  w-75 justify-content-center no-show-anemation">
+                                <button className=" border-0 bg-black text-coleur-byad ps-30 pe-30 p-10 rounded-5">Add to card</button>
+                            </div>
+                            <div className="icone-coeur no-show-anemation ">
+                                <AiFillHeart />
+                            </div>
+
+                        </div>
+                        <div className="produit_card d-flex justify-content-center align-items-center flex-column   position-relative" onMouseOut={(event2) => {
+                            props.mousout(event2)
+                        }} onMouseOver={(event) => {
+                            props.moushover(event)
+                        }}>
                             <img src={img_produit3} width="100%" alt="" />
-                            <span className=" bg-coleur-span-new text-light position-absolute ">New</span>
+                            <span className=" bg-coleur-span-sale text-light position-absolute ">Sale</span>
                             <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
                                 <p className=" m-0">Herschel supply co 25l</p>
                                 <p className=" m-0">$75.00</p>
                             </div>
-                        </div>
 
+                            <div className=" add-to-card  text-light  w-75 justify-content-center no-show-anemation">
+                                <button className=" border-0 bg-black text-coleur-byad ps-30 pe-30 p-10 rounded-5">Add to card</button>
+                            </div>
+                            <div className="icone-coeur no-show-anemation ">
+                                <AiFillHeart />
+                            </div>
+
+                        </div>
+                        <div className="produit_card d-flex justify-content-center align-items-center flex-column   position-relative" onMouseOut={(event2) => {
+                            props.mousout(event2)
+                        }} onMouseOver={(event) => {
+                            props.moushover(event)
+                        }}>
+                            <img src={img_produit2} width="100%" alt="" />
+                            <span className=" bg-coleur-span-sale text-light position-absolute ">Sale</span>
+                            <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
+                                <p className=" m-0">Herschel supply co 25l</p>
+                                <p className=" m-0">$75.00</p>
+                            </div>
+
+                            <div className=" add-to-card  text-light  w-75 justify-content-center no-show-anemation">
+                                <button className=" border-0 bg-black text-coleur-byad ps-30 pe-30 p-10 rounded-5">Add to card</button>
+                            </div>
+                            <div className="icone-coeur no-show-anemation ">
+                                <AiFillHeart />
+                            </div>
+
+                        </div>
+                        <div className="produit_card d-flex justify-content-center align-items-center flex-column   position-relative" onMouseOut={(event2) => {
+                            props.mousout(event2)
+                        }} onMouseOver={(event) => {
+                            props.moushover(event)
+                        }}>
+                            <img src={img_produit4} width="100%" alt="" />
+                            <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
+                                <p className=" m-0">Herschel supply co 25l</p>
+                                <p className=" m-0">$75.00</p>
+                            </div>
+
+                            <div className=" add-to-card  text-light  w-75 justify-content-center no-show-anemation">
+                                <button className=" border-0 bg-black text-coleur-byad ps-30 pe-30 p-10 rounded-5">Add to card</button>
+                            </div>
+                            <div className="icone-coeur no-show-anemation ">
+                                <AiFillHeart />
+                            </div>
+
+                        </div>
 
                     </div>
                 </div>
