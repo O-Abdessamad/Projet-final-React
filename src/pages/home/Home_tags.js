@@ -1,8 +1,11 @@
 import React from "react";
+import { useParams } from "react-router-dom"
+
 import { NavLink, Link } from "react-router-dom";
 import "./home.scss";
 import { FaPlay } from "react-icons/fa";
 import { AiFillHeart } from "react-icons/ai";
+
 
 
 import img_coverture1 from "../../layouts/image/coverture.jpg"
@@ -14,7 +17,9 @@ import img_produit3 from "../../layouts/image/img_produit/img_produit3.jpeg"
 import img_produit4 from "../../layouts/image/img_produit/img_produit4.jpeg"
 
 
-export const Home = (props) => {
+export const Home_tags = (props) => {
+    const { tags } = useParams();
+
 
   return (
     <>
@@ -81,17 +86,18 @@ export const Home = (props) => {
         <div className="our_products_text mt-30 pt-30">
           <h1 className=" fw-bold text-center">OUR PRODUCTS</h1>
           <div className="bottons d-flex  justify-content-between align-items-center mt-20 ms-5 p-10 ">
-            <button> <NavLink to={"home/best_sellet"} className="text-decoration-none font-Montserrat text-coleur-gry-nav menu-nav "> Best Seller </NavLink></button>
-            <button><NavLink to={"home/new"} className="text-decoration-none font-Montserrat text-coleur-gry-nav menu-nav "> New </NavLink></button>
-            <button><NavLink to={"home/sale"} className="text-decoration-none font-Montserrat text-coleur-gry-nav menu-nav "> Sale </NavLink></button>
-            <button><NavLink to={"home/old"} className="text-decoration-none font-Montserrat text-coleur-gry-nav menu-nav "> Old </NavLink></button>
+            <button>Best Seller</button>
+            <button>New</button>
+            <button>Sale</button>
+            <button>Old</button>
           </div>
         </div>
 
         <div className="our_products_img mt-30  d-flex justify-content-center align-items-center gap-15 flex-column flex-md-row flex-wrap">
 
           {
-            props.produit4.map((element, index) =>
+            props.all_produits.map((element, index) =>
+                element.tags === tags ?
               <>
                 {
                   
@@ -131,6 +137,9 @@ export const Home = (props) => {
                     </div>
 
                   </div>}
+              </>
+              :
+              <>
               </>
             )
           }
