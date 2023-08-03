@@ -18,7 +18,7 @@ import img_produit4 from "../../layouts/image/img_produit/img_produit4.jpeg"
 
 
 export const Home_tags = (props) => {
-    const { tags } = useParams();
+  const { tags } = useParams();
 
 
   return (
@@ -86,61 +86,84 @@ export const Home_tags = (props) => {
         <div className="our_products_text mt-30 pt-30">
           <h1 className=" fw-bold text-center">OUR PRODUCTS</h1>
           <div className="bottons d-flex  justify-content-between align-items-center mt-20 ms-5 p-10 ">
-            <button>Best Seller</button>
-            <button>New</button>
-            <button>Sale</button>
-            <button>Old</button>
+            <button> <NavLink to={"/home/best_sellet"} className="text-decoration-none font-Montserrat text-coleur-gry-nav link_categorier "> Best Seller </NavLink></button>
+            <button><NavLink to={"/home/new"} className="text-decoration-none font-Montserrat text-coleur-gry-nav link_categorier "> New </NavLink></button>
+            <button><NavLink to={"/home/sale"} className="text-decoration-none font-Montserrat text-coleur-gry-nav link_categorier "> Sale </NavLink></button>
+            <button><NavLink to={"/home/old"} className="text-decoration-none font-Montserrat text-coleur-gry-nav link_categorier "> Old </NavLink></button>
+
           </div>
         </div>
 
-        <div className="our_products_img mt-30  d-flex justify-content-center align-items-center gap-15 flex-column flex-md-row flex-wrap">
+        <div className="our_products_img mt-30  d-flex justify-content-center align-items-center gap-15 flex-column flex-md-row flex-wrap w-75">
 
           {
             props.all_produits.map((element, index) =>
-                element.tags === tags ?
-              <>
-                {
-                  
-                  <div className="produit_card d-flex justify-content-center align-items-center flex-column   position-relative" onMouseOut={(event2) => {
-                    props.mousout(event2)
-                  }} onMouseOver={(event) => {
-                    props.moushover(event)
-                  }}>
-                    <img src={element.src} width="100%" alt="" />
-                    {
-                      element.tags === "new" ?
-                        <>
-                          <span className=" bg-coleur-span-new text-light position-absolute ">New</span>
+              element.tags === tags ?
+                <>
+                  {
 
+                    <div className="produit_card d-flex justify-content-center align-items-center flex-column   position-relative" onMouseOut={(event2) => {
+                      props.mousout(event2)
+                    }} onMouseOver={(event) => {
+                      props.moushover(event)
+                    }}>
+                      <img src={element.src} width="100%" alt="" />
+                      {
+                        element.tags === "new" ?
+                          <>
+                            <span className=" bg-coleur-span-new text-light position-absolute ">New</span>
+
+                          </>
+                          :
+                          element.tags === "sale" ?
+                            <>
+                              <span className=" bg-coleur-span-sale text-light position-absolute ">Sale</span>
+
+                            </>
+                            :
+                            <>
+
+                            </>
+                      }
+                      <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
+                        <p className=" m-0">{element.name}</p>
+                        <p className=" m-0">${element.prix}</p>
+                      </div>
+
+                      <div className=" add-to-card  text-light  w-75 justify-content-center no-show-anemation">
+                        <button className=" border-0 bg-black text-coleur-byad ps-30 pe-30 p-10 rounded-5">Add to card</button>
+                      </div>
+                      {
+                      element.coeur === true ?
+                        <>
+                          <div className="icone-coeur no-show-anemation  coeurV" onClick={() => {
+                            const newall_produits = [...props.all_produits];
+                            newall_produits[index].coeur = false;
+                            // Mettre à jour l'état avec la nouvelle valeur
+                            props.setAll_produits(newall_produits);
+                          }}>
+                            <AiFillHeart />
+                          </div>
                         </>
+
                         :
-                        element.tags === "sale" ?
-                        <>
-                          <span className=" bg-coleur-span-sale text-light position-absolute ">Sale</span>
-
-                        </>
-                        :
-                        <>
-
-                        </>
+                        <div className="icone-coeur no-show-anemation " onClick={() => {
+                            const newall_produits = [...props.all_produits];
+                            newall_produits[index].coeur = true;
+                            // Mettre à jour l'état avec la nouvelle valeur
+                            props.setAll_produits(newall_produits);
+                          }}>
+                          <AiFillHeart />
+                        </div>
                     }
-                    <div className="produit_card_text bg-coleur-byad text-coleur-gry-nav w-100">
-                      <p className=" m-0">{element.name}</p>
-                      <p className=" m-0">${element.prix}</p>
-                    </div>
 
-                    <div className=" add-to-card  text-light  w-75 justify-content-center no-show-anemation">
-                      <button className=" border-0 bg-black text-coleur-byad ps-30 pe-30 p-10 rounded-5">Add to card</button>
-                    </div>
-                    <div className="icone-coeur no-show-anemation ">
-                      <AiFillHeart />
-                    </div>
 
-                  </div>}
-              </>
-              :
-              <>
-              </>
+                    </div>
+                    }
+                </>
+                :
+                <>
+                </>
             )
           }
 

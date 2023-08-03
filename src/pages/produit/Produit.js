@@ -26,11 +26,12 @@ export const Produit = (props) => {
 
                 <div className=' ms-lg-30  ps-lg-30 categories d-flex justify-content-center align-items-center align-items-md-start gap-5 flex-column  w-25'>
                     <h3 className=" fw-bolder fs-2">Categories</h3>
-                    <NavLink to={"/"} className={"text-decoration-none font-Montserrat text-coleur-gry-nav "}>All</NavLink>
-                    <NavLink to={"/"} className={"text-decoration-none font-Montserrat text-coleur-gry-nav"}>Women</NavLink>
-                    <NavLink to={"/"} className={"text-decoration-none font-Montserrat text-coleur-gry-nav"}>Kids</NavLink>
-                    <NavLink to={"/"} className={"text-decoration-none font-Montserrat text-coleur-gry-nav"}>Men</NavLink> <br />
-                    <h3 className=" fw-bolder fs-2">Filter</h3>
+                    <NavLink to={"/produit"} className={"text-decoration-none font-Montserrat text-coleur-gry-nav "}>All</NavLink>
+                    <NavLink to={"/produit/women"} className={"text-decoration-none font-Montserrat text-coleur-gry-nav"}>Women</NavLink>
+                    <NavLink to={"/produit/kids"} className={"text-decoration-none font-Montserrat text-coleur-gry-nav"}>Kids</NavLink>
+                    <NavLink to={"/produit/men"} className={"text-decoration-none font-Montserrat text-coleur-gry-nav"}>Men</NavLink>
+                    <NavLink to={"/produit/accessoire"} className={"text-decoration-none font-Montserrat text-coleur-gry-nav"}>Accessoire</NavLink>
+                    <h3 className=" fw-bolder fs-2 mt-lg-10">Filter</h3>
                     <div className="div-search  border border-1 p-20 d-flex align-items-center gap-10 ">
                         <input className=" border border-0" type="text" placeholder="Search Products..." />
                         <BiSearch className="BiSearch" />
@@ -77,11 +78,33 @@ export const Produit = (props) => {
                                             <div className=" add-to-card  text-light  w-75 justify-content-center no-show-anemation">
                                                 <button className=" border-0 bg-black text-coleur-byad ps-30 pe-30 p-10 rounded-5">Add to card</button>
                                             </div>
-                                            <div className="icone-coeur no-show-anemation ">
-                                                <AiFillHeart />
-                                            </div>
+                                            {
+                                                element.coeur === true ?
+                                                    <>
+                                                        <div className="icone-coeur no-show-anemation  coeurV" onClick={() => {
+                                                            const newall_produits = [...props.all_produits];
+                                                            newall_produits[index].coeur = false;
+                                                            // Mettre à jour l'état avec la nouvelle valeur
+                                                            props.setAll_produits(newall_produits);
+                                                        }}>
+                                                            <AiFillHeart />
+                                                        </div>
+                                                    </>
 
-                                        </div>}
+                                                    :
+                                                    <div className="icone-coeur no-show-anemation " onClick={() => {
+                                                        const newall_produits = [...props.all_produits];
+                                                        newall_produits[index].coeur = true;
+                                                        // Mettre à jour l'état avec la nouvelle valeur
+                                                        props.setAll_produits(newall_produits);
+                                                    }}>
+                                                        <AiFillHeart />
+                                                    </div>
+                                            }
+
+
+                                        </div>
+                                    }
                                 </>
                             )
                         }

@@ -3,7 +3,7 @@ import "../produit/produit.scss"
 import "./coeur.scss"
 import img1 from "../../layouts/image/img_produit/banner-1.jpg"
 
-export const Coeur = () => {
+export const Coeur = (props) => {
     return (
         <div>
             <div className="cov-produit">
@@ -22,18 +22,26 @@ export const Coeur = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr  className=' border' >
+                        {
+                            
+                            props.all_produits.map((element, index) =>
+                            
+                            element.coeur===true?
+                            
+                                <>
+                                
+                                <tr className='border' >
                                 <th >
-                                    <img className='image-table' src={img1} alt="" />
+                                    <img className='image-table' src={ element.src} alt="" />
                                 </th>
-                                <td className=' pt-40'>Men Tshirt</td>
-                                <td className=' pt-40'>$36</td>
+                                <td className=' pt-40'>{ element.name}</td>
+                                <td className=' pt-40'>{ element.prix} DH</td>
                                 <td className=' pt-40'>
                                     <div className='quantiter d-flex justify-content-center'>
                                         <div className=' bg-coleur-quantiter p-1'>
 
                                             <button>-</button>
-                                            <input type="text" />
+                                            <input className=' text-center' type="text" />
                                             <button>+</button>
 
                                         </div>
@@ -43,27 +51,13 @@ export const Coeur = () => {
                                 <td className=' pt-40'>$306</td>
 
                             </tr>
-                            <tr className=' border'>
-                                <th >
-                                    <img className='image-table' src={img1} alt="" />
-                                </th>
-                                <td className=' pt-40'>Men Tshirt</td>
-                                <td className=' pt-40'>$36</td>
-                                <td className=' pt-40'>
-                                    <div className='quantiter d-flex justify-content-center'>
-                                        <div className=' bg-coleur-quantiter p-1'>
 
-                                            <button>-</button>
-                                            <input type="text" />
-                                            <button>+</button>
-
-                                        </div>
-
-                                    </div>
-                                </td>
-                                <td className=' pt-40'>$306</td>
-
-                            </tr>
+                                </>
+                                :
+                                <>
+                                </>
+                                )
+                        }
 
                         </tbody>
                     </table>

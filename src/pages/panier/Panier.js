@@ -22,7 +22,7 @@ export const Panier = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr className=' border' >
+                            <tr className='border' >
                                 <th >
                                     <img className='image-table' src={img1} alt="" />
                                 </th>
@@ -64,8 +64,11 @@ export const Panier = () => {
                                 <td className=' pt-40'>$306</td>
 
                             </tr>
-                            <tr className=' border'>
-                                
+
+
+
+                            
+                            <tr className=' border'>                                
                                 <td colspan="5" className=' pt-40 '>
                                     <button className=' text-light bg-black ps-30 pe-30 p-10 border-0 rounded-5'>
                                         PROCEED TO PAYMENT

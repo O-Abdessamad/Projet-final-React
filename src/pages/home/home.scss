@@ -44,11 +44,14 @@
             border: none;
             background-color: transparent;
             margin-bottom: 10px;
-        }
-        button:hover{
-            border-bottom: 1px solid gray;
-        }
+        }       
     }
+}
+.link_categorier.active{
+    border-bottom: 1px solid gray;
+}
+.coeurV{
+    color: red !important;
 }
 .our_products_img{
     .produit_card{
