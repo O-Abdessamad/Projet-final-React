@@ -1,12 +1,13 @@
 import { NavLink, Link } from "react-router-dom";
 import img_log from "../layouts/image/logo.png";
 import "./header.scss"
-import { AiOutlineHeart,AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 
 
-export const Header = () => {
+export const Header = (props) => {
     return (
         <>
+
             <header className="d-flex justify-content-between  p-10 align-items-center text-light ">
                 <div className=" ps-30 "> <Link to={"/"} ><img src={img_log} alt="log" /> </Link> </div>
                 <div className="header_menu  d-none d-lg-flex justify-content-around ">
@@ -18,7 +19,8 @@ export const Header = () => {
                 <div className="header_icone  d-flex  justify-content-center align-items-center">
                     <NavLink to={"/coeur"} className="text-decoration-none icone-nav text-coleur-gry-nav icone-heart pe-30 menu-nav">  <AiOutlineHeart /> </NavLink>
                     <div className="  position-relative">
-                        <span className=" bg-black p-6 panier"> 1 </span>
+                        
+                        <span className=" bg-black p-6 panier"> {props.count} </span>
                         <NavLink to={"/panier"} className="text-decoration-none icone-nav text-coleur-gry-nav ps-30 pe-15 menu-nav">  <AiOutlineShoppingCart /> </NavLink>
                     </div>
                     {/* menu-bergre */}

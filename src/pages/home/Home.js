@@ -14,7 +14,8 @@ import img_produit3 from "../../layouts/image/img_produit/img_produit3.jpeg"
 import img_produit4 from "../../layouts/image/img_produit/img_produit4.jpeg"
 
 
-export const Home = (props) => {
+export const Home = (props) => {  
+  
 
   return (
     <>
@@ -27,7 +28,7 @@ export const Home = (props) => {
               <div className="cover-text position-absolute text-center ">
                 <h2 className=" m-0 fw-bold pb-20 border-5 border-bottom border-light"> Leather Bags</h2>
                 <p className=" m-0 font-Montserrat2 text-light mt-20 mb-20 pb-30">New Collection 2018</p>
-                <Link className="text-decoration-none font-Montserrat text-dark pe-30 ps-30 p-20 bg-light rounded-5"> Shop Now</Link>
+                <Link to={"/produit"} className="text-decoration-none font-Montserrat text-dark pe-30 ps-30 p-20 bg-light rounded-5"> Shop Now</Link>
               </div>
             </NavLink>
 
@@ -123,17 +124,9 @@ export const Home = (props) => {
                       <p className=" m-0">${element.prix}</p>
                     </div>
 
-                    <div className=" add-to-card  text-light  w-75 justify-content-center no-show-anemation" onClick={()=>{
-                      const newPanier = [...props.panier];
-                      console.log(props.panier);
-
-
-                      const verifyproduit = props.panier.find(element => element.src === newPanier.src);
-
-
-
-                      newPanier.push(props.all_produits[index]);
-                      props.setPanier(newPanier);
+                    <div className=" add-to-card  text-light  w-75 justify-content-center no-show-anemation" onClick={() => {
+                      props.panier(props.produit4,props.setProduit4,index);
+                      
 
                     }}>
                       <button className=" border-0 bg-black text-coleur-byad ps-30 pe-30 p-10 rounded-5">Add to card</button>
@@ -153,11 +146,11 @@ export const Home = (props) => {
 
                         :
                         <div className="icone-coeur no-show-anemation " onClick={() => {
-                            const newProduit4 = [...props.produit4];
-                            newProduit4[index].coeur = true;
-                            // Mettre à jour l'état avec la nouvelle valeur
-                            props.setProduit4(newProduit4);
-                          }}>
+                          const newProduit4 = [...props.produit4];
+                          newProduit4[index].coeur = true;
+                          // Mettre à jour l'état avec la nouvelle valeur
+                          props.setProduit4(newProduit4);
+                        }}>
                           <AiFillHeart />
                         </div>
                     }

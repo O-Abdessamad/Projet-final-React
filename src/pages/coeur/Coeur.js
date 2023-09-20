@@ -17,47 +17,38 @@ export const Coeur = (props) => {
                                 <th scope="col"></th>
                                 <th scope="col">PRODUIT</th>
                                 <th scope="col">PRIX</th>
-                                <th scope="col">QUANTITY</th>
-                                <th scope="col">TOTAL</th>
                             </tr>
                         </thead>
                         <tbody>
-                        {
-                            
-                            props.all_produits.map((element, index) =>
-                            
-                            element.coeur===true?
-                            
-                                <>
-                                
-                                <tr className='border' >
-                                <th >
-                                    <img className='image-table' src={ element.src} alt="" />
-                                </th>
-                                <td className=' pt-40'>{ element.name}</td>
-                                <td className=' pt-40'>{ element.prix} DH</td>
-                                <td className=' pt-40'>
-                                    <div className='quantiter d-flex justify-content-center'>
-                                        <div className=' bg-coleur-quantiter p-1'>
+                            {
 
-                                            <button>-</button>
-                                            <input className=' text-center' type="text" />
-                                            <button>+</button>
+                                props.all_produits.map((element, index) =>
 
-                                        </div>
+                                    (element.coeur === true)&& (element.panier === false) ?
 
-                                    </div>
-                                </td>
-                                <td className=' pt-40'>$306</td>
+                                        <>
 
-                            </tr>
+                                            <tr className='border' >
+                                                <th >
+                                                    <img className='image-table' src={element.src} alt="" />
+                                                </th>
+                                                <td className=' pt-40'>{element.name}</td>
+                                                <td className=' pt-40'>{element.prix} DH</td>
+                                                <td className=' pt-40'>
+                                                    
+                                                        <button className=" border-0 bg-black text-coleur-byad ps-30 pe-30 p-10 rounded-5" onClick={() => {
+                                                        props.panier(props.all_produits, props.setAll_produits, index);
+                                                    }}>Add to card</button>
+                                                </td>
 
-                                </>
-                                :
-                                <>
-                                </>
+                                            </tr>
+
+                                        </>
+                                        :
+                                        <>
+                                        </>
                                 )
-                        }
+                            }
 
                         </tbody>
                     </table>

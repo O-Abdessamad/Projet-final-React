@@ -1,21 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom"
-
 import { NavLink, Link } from "react-router-dom";
 import "./home.scss";
 import { FaPlay } from "react-icons/fa";
 import { AiFillHeart } from "react-icons/ai";
 
-
-
 import img_coverture1 from "../../layouts/image/coverture.jpg"
 import img_coverture2 from "../../layouts/image/coverture2.jpg"
-
-import img_produit1 from "../../layouts/image/img_produit/img_produit1.jpeg"
-import img_produit2 from "../../layouts/image/img_produit/img_produit2.jpeg"
-import img_produit3 from "../../layouts/image/img_produit/img_produit3.jpeg"
-import img_produit4 from "../../layouts/image/img_produit/img_produit4.jpeg"
-
 
 export const Home_tags = (props) => {
   const { tags } = useParams();
@@ -99,6 +90,7 @@ export const Home_tags = (props) => {
           {
             props.all_produits.map((element, index) =>
               element.tags === tags ?
+              
                 <>
                   {
 
@@ -130,7 +122,11 @@ export const Home_tags = (props) => {
                         <p className=" m-0">${element.prix}</p>
                       </div>
 
-                      <div className=" add-to-card  text-light  w-75 justify-content-center no-show-anemation">
+                      <div className=" add-to-card  text-light  w-75 justify-content-center no-show-anemation" onClick={() => {
+                      props.panier(props.produit4,props.setProduit4,index);
+                      
+
+                    }}>
                         <button className=" border-0 bg-black text-coleur-byad ps-30 pe-30 p-10 rounded-5">Add to card</button>
                       </div>
                       {

@@ -6,20 +6,14 @@ import React from 'react';
 import "./produit.scss"
 import "../home/home.scss"
 
-export const ProduitCategorier = (props) => {
-    const { categorier } = useParams();
+export const ProduitDetail = (props) => {
+    const { nomProduit } = useParams();
     
-    let nomPC = 0;
-    for (let index = 0; index < props.all_produits.length; index++) {
-        let element = props.all_produits[index];
-        if (element.categorie===categorier) {
-            nomPC+=1;            
-        }
-        
-    }
+
 
     return (
         <div >
+        <h1>teeeeeet</h1>
 
             <div className="cov-produit">
                 <div className="titres text-coleur-byad bg-black d-flex justify-content-center align-items-center flex-column ">
@@ -46,14 +40,13 @@ export const ProduitCategorier = (props) => {
                 </div>
 
                 <div className=' me-lg-30  pe-lg-30 produits '>
-                    <p className="font-Montserrat text-coleur-gry-nav text-end me-lg-30  pe-lg-30">Nombre de produit search : {nomPC} all</p>
                     <div className=" me-lg-40  pe-lg-40 our_products_img mt-30  d-flex justify-content-center align-items-center gap-5 flex-column flex-md-row flex-wrap">
                         {
                             props.all_produits.map((element, index) =>
                                 <>
                                     {
 
-                                        element.categorie === categorier ?
+                                        element.name === nomProduit ?
                                             <div className="produit_card d-flex justify-content-center align-items-center flex-column   position-relative" onMouseOut={(event2) => {
                                                 props.mousout(event2)
                                             }} onMouseOver={(event) => {

@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../produit/produit.scss"
 import "../coeur/coeur.scss"
-import img1 from "../../layouts/image/img_produit/banner-1.jpg"
 
-export const Panier = () => {
+export const Panier = (props) => {
+    const sfpanier = (qut, panier) => {
+
+    }
+
+    const [valueinput, setvalueinput] = useState("");
+    const input = (event) => {
+        console.log(event.target.value);
+        setvalueinput(event.target.value);
+    }
+
+    let prixtotal = 0;
+
     return (
         <div>
             <div className="cov-produit">
@@ -22,59 +33,84 @@ export const Panier = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr className='border' >
-                                <th >
-                                    <img className='image-table' src={img1} alt="" />
-                                </th>
-                                <td className=' pt-40'>Men Tshirt</td>
-                                <td className=' pt-40'>$36</td>
-                                <td className=' pt-40'>
-                                    <div className='quantiter d-flex justify-content-center'>
-                                        <div className=' bg-coleur-quantiter p-1'>
 
-                                            <button>-</button>
-                                            <input type="text" />
-                                            <button>+</button>
+                            {
+                                props.all_produits.map((element, index) =>
 
-                                        </div>
+                                    element.panier === true ?
+                                        <>
+                                            <tr valign="middle" className='border produit_panier'>
+                                                <th >
+                                                    <img className='image-table' src={element.src} alt="" />
+                                                </th>
+                                                <td>{element.name} </td>
+                                                <td>{element.prix} </td>
+                                                <td>
+                                                    <div className='quantiter d-flex justify-content-center'>
+                                                        <div className=' bg-coleur-quantiter p-1'>
 
-                                    </div>
-                                </td>
-                                <td className=' pt-40'>$306</td>
+                                                            <button onClick={() => {
 
-                            </tr>
-                            <tr className=' border'>
-                                <th >
-                                    <img className='image-table' src={img1} alt="" />
-                                </th>
-                                <td className=' pt-40'>Men Tshirt</td>
-                                <td className=' pt-40'>$36</td>
-                                <td className=' pt-40'>
-                                    <div className='quantiter d-flex justify-content-center'>
-                                        <div className=' bg-coleur-quantiter p-1'>
+                                                                const newall_produits = [...props.all_produits];
 
-                                            <button>-</button>
-                                            <input type="text" />
-                                            <button>+</button>
+                                                                newall_produits[index].qut > 1 ? newall_produits[index].qut -= 1 : newall_produits[index].qut = props.all_produits[index].qut;
+                                                                // Mettre à jour l'état avec la nouvelle valeur
+                                                                props.setAll_produits(newall_produits);
 
-                                        </div>
+                                                            }}>-</button>
+                                                            <input className=' text-center' type="text" value={element.qut} />
+                                                            <button onClick={() => {
 
-                                    </div>
-                                </td>
-                                <td className=' pt-40'>$306</td>
+                                                                const newall_produits = [...props.all_produits];
+                                                                newall_produits[index].qut += 1;
+                                                                // Mettre à jour l'état avec la nouvelle valeur
+                                                                props.setAll_produits(newall_produits);
 
-                            </tr>
+                                                            }}>+</button>
+
+                                                        </div>
+
+                                                    </div>
+                                                </td>
+                                                <td>{(element.prix) * (element.qut)} DH</td>
+                                                <p className=' d-none'>
+                                                    {
+                                                        prixtotal = prixtotal + ((element.prix) * (element.qut))
+                                                    }
+                                                </p>
+                                                <td>
+                                                    <button className="btn btn-dark rounded-4" onClick={() => {
+                                                        const newall_produits = [...props.all_produits];
+
+                                                        newall_produits[index].qut = 0;
+                                                        newall_produits[index].panier = false;
+                                                        // Mettre à jour l'état avec la nouvelle valeur
+                                                        props.setAll_produits(newall_produits);
+
+                                                    }}> Supperimer</button>
+                                                </td>
 
 
+                                            </tr>
 
-                            
-                            <tr className=' border'>                                
-                                <td colspan="5" className=' pt-40 '>
+                                        </>
+                                        :
+                                        <>
+
+
+                                        </>
+                                )
+                            }
+                            <tr valign="middle" className=' border '>
+                                <td colspan="5" >
                                     <button className=' text-light bg-black ps-30 pe-30 p-10 border-0 rounded-5'>
                                         PROCEED TO PAYMENT
                                     </button>
+
                                 </td>
-                                <td></td>
+                                <td>
+                                    Total a payer : {prixtotal} Dh
+                                </td>
                             </tr>
 
                         </tbody>
